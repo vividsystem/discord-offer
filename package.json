@@ -1,0 +1,24 @@
+{
+  "name": "discord-offer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["./dist"],
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/vividsystem/discord-offer"
+  },
+  "author": "vividsystem",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "discord.js": "^14.6.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

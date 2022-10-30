@@ -1,0 +1,22 @@
+name: Publish to NPM Registry
+on:
+  push:
+    branches: [ master ]
+jobs:
+  release:
+    - name: Release to NPM
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout project repository
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          registry-url: https://registry.npmjs.org/
+      - run: npm install
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPMJS_ACCESS_TOKEN }}
